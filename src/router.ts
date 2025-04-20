@@ -17,4 +17,5 @@ export async function  routes(fastify: FastifyInstance, options: FastifyPluginOp
    fastify.delete("/customer", async (request: FastifyRequest, reply: FastifyReply)=> {
     return new DeleteCustomerControllers().handle(request, reply)
    })
+   
 }
