@@ -3,19 +3,13 @@
     "builds": [
       {
         "src": "src/server.ts",
-        "use": "@vercel/node",
-        "config": {
-          "maxDuration": 10
-        }
+        "use": "@vercel/node"
       }
     ],
-    "env": {
-      "DATABASE_URL": "@database_url"
-    },
     "routes": [
       {
-        "src": "/api/(.*)",
-        "dest": "/src/server.ts"
+        "src": "/(.*)",
+        "dest": "/api/index.ts"
       }
     ]
   }
