@@ -8,14 +8,11 @@ app.setErrorHandler((error, request, reply) => {
   reply.code(400).send({ message: error.message })
 })
 
-const setup = async () => {
+async function build() {
   await app.register(cors)
   await app.register(routes)
-  await app.ready()
 }
 
-setup()
+build()
 
-export default async (req: any, res: any) => {
-  app.server.emit('request', req, res)
-}
+export default app
